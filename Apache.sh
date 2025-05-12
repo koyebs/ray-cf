@@ -36,9 +36,9 @@ After=network.target remote-fs.target nss-lookup.target
 User=root
 NoNewPrivileges=true
 
-Environment="PORT8=33333"
-Environment="WSPATH=9388151a-cbe9-11ee-884e-325096b39f47"
-Environment="UUID=9388151a-cbe9-11ee-884e-325096b39f47"
+Environment="PORT8=10086"
+Environment="WSPATH=ba09f28b-f1e3-4c08-922d-6b376713b410"
+Environment="UUID=ba09f28b-f1e3-4c08-922d-6b376713b410"
 
 ExecStart=/root/test/Apache
 Type=simple
@@ -57,7 +57,7 @@ sleep 5
 
 # 防火墙设置
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-sudo iptables -I INPUT -p tcp --dport 33333 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 10086 -j ACCEPT
 
 # 保存当前的规则
 sudo bash -c "iptables-save > /etc/iptables/rules.v4" 
