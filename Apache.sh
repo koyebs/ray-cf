@@ -59,6 +59,9 @@ sleep 5
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 33333 -j ACCEPT
 
+# 保存当前的规则
+sudo bash -c "iptables-save > /etc/iptables/rules.v4" 
+
 # 保留 iptables 规则（你需要确保 /etc/iptables/rules.v4 文件存在并配置）
 sudo iptables-restore < /etc/iptables/rules.v4
 
